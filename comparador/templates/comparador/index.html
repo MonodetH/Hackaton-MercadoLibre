@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Compa Meli</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+</head>
+
+<body style="padding:0">
+    <div class="navbar navbar-inverse navbar-fixed-top" id="barra-nav" style="background-color: #fff059">
+        <div class="row">
+            <div class="col"
+                <a class="navbar-brand" href="#" style="color:#0637b3; font-size:30px"><strong>Compa Meli</strong></a>
+            </div>
+            <!--form class="form-inline">
+                <label for="exampleInputName2">URL:</label>
+                <input type="text" class="form-control" id="inputURL" style"width: 100%" placeholder="http://articulo.mercadolibre.cl/...">
+                <button type="submit" class="btn btn-primary">Agregar</button>
+            </form-->
+            <div class="col">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-primary my-2 my-sm-0" type="submit">Agregar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{sentiment}}
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Imagenes</th>
+                    <th>Precio</th>
+                    <th>Descripción</th>
+                    <th>Respuestas</th>
+                    <th>Calificación Vendedor</th>
+                    <th>Ir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <!--td><img src="https://http2.mlstatic.com/xiaomi-celulares-smartphones-D_Q_NP_717464-MLC25594767285_052017-D.webp" alt="imagen" class="img-rounded"></td-->
+                    <td>
+                        <div id="carruselImagenes" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                <img class="d-block img-fluid" src="https://http2.mlstatic.com/xiaomi-celulares-smartphones-D_Q_NP_717464-MLC25594767285_052017-D.webp" alt="imagen">
+                                </div>
+                                <div class="carousel-item">
+                                <img class="d-block img-fluid" src="https://http2.mlstatic.com/xiaomi-celulares-smartphones-D_Q_NP_717464-MLC25594767285_052017-D.webp" alt="imagen">
+                                </div>
+                                <div class="carousel-item">
+                                <img class="d-block img-fluid" src="https://http2.mlstatic.com/xiaomi-celulares-smartphones-D_Q_NP_717464-MLC25594767285_052017-D.webp" alt="imagen">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carruselImagenes" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carruselImagenes" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </td>
+                    <td>$1.000</td>
+                    <td>
+                        <span class="badge badge-success">Bonito</span>
+                        <span class="badge badge-danger">Usado</span>
+                    </td>
+                    <td>Bueno, bonito y barato</td>
+                    <td>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Ir</button>
+                        <a href="/">
+                            <i class="fa fa-trash" aria-hidden="true" style="color:red"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr/>
+    <footer class="text-center">
+        <p>&copy; {{ year }} - Momase Corp</p>
+    </footer>
+
+    <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'app/scripts/respond.js' %}"></script>
+{% block scripts %}{% endblock %}
+
+</body>
+</html>
